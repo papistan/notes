@@ -1,0 +1,52 @@
+HTML Qs
+
+
+What does a doctype do? let's browser know what type of html you're going to give it*
+<!DOCTYPE html> is simplest and recommended for HTML5
+
+What's the difference between standards mode and quirks mode? when you have something for older browsers or mark something before doctype - ex. XML or comment, it will trigger quirks mode. 
+
+What's the difference between HTML and XHTML?  xhtml must be marked up properly, or wont work versus looser HTML
+
+Are there any problems with serving pages as application/xhtml+xml? 
+
+How do you serve a page with content in multiple languages? use language attributes on elements surrounding that content. This allows you to style or process it differently. ex.
+<html lang="en"><body>The Chinese translation of Stack Overflow is <span lang="zh-Hans">堆叠溢位</span></body></html> 
+
+What kind of things must you be wary of when design or developing for multilingual sites? font size sometimes need to be larger (ex. arabic), and fonts changed
+
+What are data- attributes good for?  Setting values for javascript to access later, but not to be rendered on page: 
+<article
+  id="electriccars"
+  data-columns="3"
+  data-index-number="12314"
+  data-parent="cars">
+...
+</article>
+
+Consider HTML5 as an open web platform. What are the building blocks of HTML5?
+	Semantics: allowing you to describe more precisely what your content is.
+	Connectivity: allowing you to communicate with the server in new and innovative ways.
+	Offline and storage: allowing webpages to store data on the client-side locally and operate offline more efficiently.
+	Multimedia: making video and audio first-class citizens in the Open Web.
+	2D/3D graphics and effects: allowing a much more diverse range of presentation options.
+	Performance and integration: providing greater speed optimization and better usage of computer hardware.
+	Device access: allowing for the usage of various input and output devices.
+	Styling: letting authors write more sophisticated themes.
+
+Describe the difference between a cookie, sessionStorage and localStorage.
+
+Describe the difference between <script>, <script async> and <script defer>.
+Why is it generally a good idea to position CSS <link>s between <head></head> and JS <script>s just before </body>? Do you know any exceptions?
+What is progressive rendering?
+Have you used different HTML templating languages before?
+
+
+
+
+Put non-containing things in self-closing tabs
+
+<img />
+
+<input>
+

@@ -1,0 +1,180 @@
+JS Questions:
+
+Define Function Expressions
+
+		- var x = function (a, b) {return a * b};
+
+Define function declaration
+
+		- function myFunction(a, b) {
+    	return a * b;
+			}
+
+Function Constructor
+
+		-	var myFunction = new Function("a", "b", "return a * b");
+		- 
+
+
+Hoisting 
+
+		- moving declarations to the top
+		- initialization is not moved to top (ie value of var x)
+
+Explain event delegation
+			 - events (clicks, etc) 'bubble up' parent chain all the way up to document level. Event listeners can be set to listen for these. 
+			 - Allows you to save time
+
+Explain how this works in JavaScript
+
+			- adding event listener on parent element, then narrowing down by conditional statement to match correct target. 
+			- 
+			document.getElementById("parent-list").addEventListener("click", function(e) {
+				// e.target is the clicked element!
+				// If it was a list item
+				if(e.target && e.target.nodeName == "LI") {
+					// List item found!  Output the ID!
+					console.log("List item ", e.target.id.replace("post-", ""), " was clicked!");
+				}
+			});
+
+Explain how prototypal inheritance works
+
+				- Every js object has a prototype. Prototype is also an object. JS objects inherit their prototypes' properties and methods. 
+
+				Ex. object constructor function (remember CapitalizE constructors):
+				function Person(first, last, age, eyecolor) {
+				    this.firstName = first;
+				    this.lastName = last;
+				    this.age = age;
+				    this.eyeColor = eyecolor;
+				}
+
+				Use new to create new objects: 
+
+				var myFather = new Person("John", "Doe", 50, "blue");
+				var myMother = new Person("Sally", "Rally", 48, "green");
+
+				new properties: 
+
+				myFather.nationality = "English";
+				myFather.name = function () {
+    			return this.firstName + " " + this.lastName;
+				};
+
+				NOO:  Person.nationality = "English";  NOO
+
+				YES:   Person.prototype.nationality = "English"; YES
+
+What do you think of AMD vs CommonJS?
+
+			-
+
+Explain why the following doesn't work as an IIFE (pronounced "iffy"): function foo(){ }();.
+
+			- IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined.
+			- no parens 
+
+What needs to be changed to properly make it an IIFE?
+
+			- add parens: (function foo(){ })()
+
+What's the difference between a variable that is: null, undefined or undeclared?
+
+		 undefined - declared but no value exists
+		 null - a value of a variable
+		 undeclared - does not use the var keyword
+
+How would you go about checking for any of these states?
+
+			-  console.log(); and 'type of' 
+
+What is a closure, and how/why would you use one?
+
+				 - an inner function that has access to outer function variables 
+
+				 -  function showName (firstName, lastName) { 
+				​var nameIntro = "Your name is ";
+				    // this inner function has access to the outer function's variables, including the parameter​
+				​function makeFullName () {         
+				​return nameIntro + firstName + " " + lastName;     
+				}
+				​
+				​return makeFullName (); 
+				} 
+				​
+				showName ("Michael", "Jackson"); // Your name is Michael Jackson
+
+What's a typical use case for anonymous functions?
+
+		- click event handler - bind it and it runs
+
+How do you organize your code? (module pattern, classical inheritance?)
+
+		- 
+
+What's the difference between host objects and native objects?
+
+		- native are built in objects, ex. string, boolean, etc
+		- host are built by env, such as browser (ie window)
+
+Difference between: function Person(){}, var person = Person(), and var person = new Person()?
+
+What's the difference between .call and .apply?
+
+		- call the subsequent arguments are passed in to the function as they are, while apply expects the second argument to be an array that it unpacks as arguments for the called function.
+
+Explain Function.prototype.bind.
+
+		- sets inner scope to binded to another scope
+
+When would you use document.write()?
+
+		- add html element that should be dynamically updated:
+				<script>
+				document.write(Date());
+				</script>
+
+What's the difference between feature detection, feature inference, and using the UA string?
+
+
+
+Explain AJAX in as much detail as possible.
+
+		- Asynchronous JavaScript and XML - via jQuery or native JavaScript, uses a host object called XMLHttpRequest to communicate to a server-side script to retrieve data formatted in either JSON, XML, HTML, or plain text.
+		 - client and the server will work independently and also communicate independently, allowing the user to continue interaction with the web page, independent of what is happening on the server.
+		 - Newer technologies have slowly been replacing the XML in AJAX with JSON. The reason being, XML is a lot stricter than HTML, thus having larger file sizes, and harder to extract the data that is returned. JSON is less verbose, has proven to be more efficient, and working with data is much easier.
+		- $.ajax({
+        type        : varType, //GET or POST or PUT or DELETE verb
+        url         : varUrl, // Location of the service
+        data        : varData
+        }).
+
+
+
+Explain how JSONP works (and how it's not really AJAX).
+
+Have you ever used JavaScript templating?
+
+If so, what libraries have you used?
+
+Explain "hoisting".
+
+Describe event bubbling.
+
+What's the difference between an "attribute" and a "property"?
+Why is extending built-in JavaScript objects not a good idea?
+Difference between document load event and document ready event?
+What is the difference between == and ===?
+Explain the same-origin policy with regards to JavaScript.
+Make this work:
+duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
+Why is it called a Ternary expression, what does the word "Ternary" indicate?
+What is "use strict";? what are the advantages and disadvantages to using it?
+Create a for loop that iterates up to 100 while outputting "fizz" at multiples of 3, "buzz" at multiples of 5 and "fizzbuzz" at multiples of 3 and 5
+Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
+Why would you use something like the load event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
+Explain what a single page app is and how to make one SEO-friendly.
+What is the extent of your experience with Promises and/or their polyfills?
+What are the pros and cons of using Promises instead of callbacks?
+What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?

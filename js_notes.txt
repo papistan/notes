@@ -16,11 +16,6 @@ Function Constructor
 		- 
 
 
-Hoisting 
-
-		- moving declarations to the top
-		- initialization is not moved to top (ie value of var x)
-
 Explain event delegation
 			 - events (clicks, etc) 'bubble up' parent chain all the way up to document level. Event listeners can be set to listen for these. 
 			 - Allows you to save time
@@ -91,7 +86,8 @@ How would you go about checking for any of these states?
 
 What is a closure, and how/why would you use one?
 
-				 - an inner function that has access to outer function variables 
+				 - function defined within a function 
+				 - access to 3 scopes - inner, parent, global
 
 				 -  function showName (firstName, lastName) { 
 				​var nameIntro = "Your name is ";
@@ -154,17 +150,32 @@ Explain AJAX in as much detail as possible.
 
 Explain how JSONP works (and how it's not really AJAX).
 
+	- <script> tag
+
 Have you ever used JavaScript templating?
+
+	- nope
 
 If so, what libraries have you used?
 
 Explain "hoisting".
 
+		- during compiling phase, variable and function declarations are put into memory.
+		- initialization is not moved to top (ie value of var x)
+		- this allows you to use function before you declare in code
+
 Describe event bubbling.
 
+		- moving up parent chain until event listener is triggered
+
 What's the difference between an "attribute" and a "property"?
+
+		- 
+
 Why is extending built-in JavaScript objects not a good idea?
+
 Difference between document load event and document ready event?
+
 What is the difference between == and ===?
 Explain the same-origin policy with regards to JavaScript.
 Make this work:
@@ -178,3 +189,49 @@ Explain what a single page app is and how to make one SEO-friendly.
 What is the extent of your experience with Promises and/or their polyfills?
 What are the pros and cons of using Promises instead of callbacks?
 What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
+
+
+For loop 
+
+		for (i = 0; i < cars.length; i++) { 
+		    code here
+		}
+
+How to empty an array in JavaScript?
+
+	- arrayList = []
+	- arrayList.length = 0
+	- arrayList.splice(0, arrayList.length)
+	- while(arrayList.length){
+			arrayList.pop();
+		}
+
+Fibonacci 
+
+		var fib = function(x) {
+		  switch (x){
+		    case 0: return 0;
+		    case 1: return 1;
+		    default: return fib(x - 2) + fib(x - 1);
+		  }
+		    
+		}
+		  
+		console.log(fib(11))
+
+Q: Why return undefined? A: because of inner hoisting
+		  var text = 'outside';
+			function logIt(){
+		    console.log(text);
+		    var text = 'inside';
+			};
+			logIt();
+
+
+Pitfalls of using typeof bar === 'object'
+
+		- var bar = null;  IS TRUE
+
+
+
+

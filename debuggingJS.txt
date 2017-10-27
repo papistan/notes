@@ -1,0 +1,22 @@
+
+
+Chrome dev tools - stack trace 
+- Check Async checkbox in call stack window (lets us see async actions across )
+- italic lines show ansync boundaries
+
+Blackboxing framework code 
+- right click on minfied file and click 'Blackbox script'
+- debugger steps over this file 
+
+Sources 
+- full debugger env
+- click on number on left side, it will stop at that point in code on next run
+- run again and see where code is at this point. Can even see what 'this' is 
+
+
+Network 
+- Throttling - uncheck and try on different network speeds
+
+Timeline 
+- Screenshots - show step by step what is taking place on screen load with a slider tool after reload
+- 
